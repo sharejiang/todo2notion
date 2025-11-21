@@ -28,3 +28,8 @@
 如果你觉得本项目帮助了你，请作者喝一杯咖啡，你的支持是作者最大的动力。本项目会持续更新。
 
 ![](./asset/WechatIMG27.jpg)
+
+## Landing preview
+
+The `web/index.html` file contains a small landing hero with a Split Text style
+title animation inspired by [Reactbits](https://reactbits.dev/text-animations/split-text).

@@ -1,0 +1,116 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #0c0f1a;
+  --panel: #11182b;
+  --accent: #7c4dff;
+  --text: #f5f7fb;
+  --muted: #b3bed9;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at 20% 20%, rgba(124, 77, 255, 0.35), transparent 25%),
+    radial-gradient(circle at 80% 0%, rgba(63, 193, 201, 0.35), transparent 25%),
+    var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+.page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 72px 20px;
+}
+
+.hero {
+  background: linear-gradient(145deg, rgba(17, 24, 43, 0.85), rgba(17, 24, 43, 0.65));
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 28px;
+  padding: 56px 56px 64px;
+  max-width: 760px;
+  width: 100%;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 12px;
+  color: var(--muted);
+  margin: 0 0 12px;
+}
+
+.hero__title {
+  font-size: clamp(36px, 6vw, 64px);
+  font-weight: 800;
+  margin: 0 0 18px;
+  line-height: 1.05;
+  position: relative;
+  perspective: 800px;
+}
+
+.hero__subtitle {
+  margin: 0 0 28px;
+  font-size: 18px;
+  color: var(--muted);
+  max-width: 620px;
+  line-height: 1.6;
+}
+
+.hero__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 22px;
+  border-radius: 14px;
+  background: linear-gradient(120deg, #7c4dff, #4fb9ff);
+  color: #0c0f1a;
+  text-decoration: none;
+  font-weight: 700;
+  box-shadow: 0 10px 40px rgba(124, 77, 255, 0.45);
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+
+.hero__cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 48px rgba(124, 77, 255, 0.55);
+}
+
+.split-text {
+  display: inline-block;
+  overflow: hidden;
+}
+
+.split-text__word {
+  display: inline-flex;
+  margin-right: 8px;
+}
+
+.split-text__char {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(18px) rotateX(65deg);
+  animation: split-enter 640ms cubic-bezier(0.26, 0.6, 0.46, 1.01) forwards;
+}
+
+@keyframes split-enter {
+  to {
+    opacity: 1;
+    transform: translateY(0) rotateX(0deg);
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding: 42px 32px;
+  }
+
+  .hero__subtitle {
+    font-size: 16px;
+  }
+}
